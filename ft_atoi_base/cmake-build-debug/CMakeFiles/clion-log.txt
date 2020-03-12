@@ -1,0 +1,4 @@
+/Volumes/Storage/goinfre/jgiron/apps/CLion/ch-0/193.6494.38/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/jgiron/Documents/libasm_r/ft_atoi_base
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/jgiron/Documents/libasm_r/ft_atoi_base/cmake-build-debug

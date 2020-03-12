@@ -1,0 +1,1 @@
+nasm -fmacho64 ft_write_lmartin.asm && nasm -fmacho64 ft_write_lothieve.asm && nasm -fmacho64 ft_write.asm && gcc -c test_time_write.c && clang -fno-pie ft_write_lmartin.o ft_write_lothieve.o ft_write.o test_time_write.o && ./a.out
