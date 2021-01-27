@@ -1,7 +1,7 @@
-	global	ft_strcmp
+	global	_ft_strcmp
 
 	section	.text
-ft_strcmp:
+_ft_strcmp:
 		mov	rax, -0x1
 loop:
 		inc	rax

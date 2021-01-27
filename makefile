@@ -6,7 +6,7 @@
 #    By: jgiron <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/18 12:01:33 by jgiron            #+#    #+#              #
-#    Updated: 2021/01/18 13:16:57 by jgiron           ###   ########.fr        #
+#    Updated: 2021/01/27 13:44:00 by jgiron           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,29 +14,46 @@ NAME = libasm
 
 NAME_LIB = libasm.a
 
-SRCS = 	ft_write.s \
+
+
+CC = gcc
+
+UNAME_S := $(shell uname -s)
+
+ifeq ($(UNAME_S), Linux)
+    SRCS = 	ft_write.s \
 		ft_read.s \
 		ft_strcmp.s \
 		ft_strcpy.s \
 		ft_strdup.s \
-		ft_strlen.s \
+		ft_strlen.s 
+    NASMFLAGS ?= -f elf64
+endif
+ifeq ($(UNAME_S), Darwin)
+    SRCS = 	ft_write_macos.s \
+		ft_read_macos.s \
+		ft_strcmp_macos.s \
+		ft_strcpy_macos.s \
+		ft_strdup_macos.s \
+		ft_strlen_macos.s 
+    NASMFLAGS ?= -f macho64
 
-CC = gcc
+endif
+
+OBJ = $(SRCS:.s=.o)
 
 CFLAGS = -Wall -Wextra -Werror
 
 NASM = nasm
 
-NASMFLAGS = -f elf64
-
-OBJ = $(SRCS:.s=.o)
-
 %.o : %.s
-	$(NASM) $(NASMFLAGS) $< -o $@
+	  $(NASM) $(NASMFLAGS) $< -o $@
 
 all : $(NAME)
 
-$(NAME) : $(OBJ)
+
+
+$(NAME) : $(OBJ) 
 	ar rcs $(NAME_LIB) $(OBJ)
 	ranlib $(NAME_LIB)
 
