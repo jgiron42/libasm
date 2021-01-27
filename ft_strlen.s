@@ -1,6 +1,6 @@
-	global	ft_strlen
+	global  ft_strlen
 
-	section	.text
+    section	.text
 ft_strlen:
 		mov	rax, -0x1
 ;		mov	rax, rdi

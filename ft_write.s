@@ -1,11 +1,14 @@
-          global    _ft_write
+          global    ft_write
 
           section   .text
-_ft_write:
+ft_write:
 		mov	rax, 0x2000004
 		syscall
-		jb	error
+		jc	error
 		ret
 error:
+		mov r15, rax
+		___error
+		mov [rax], r15
 		mov	rax, -0x1
 		ret
