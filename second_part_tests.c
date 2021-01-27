@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   second_part_tests.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgiron <jgiron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,16 +12,17 @@
 
 #include "./libasm.h"
 
-void	print_result(int result, int length)
+int	 ft_write_test(char *length)
 {
-	while (--length >= 0)
-		printf("%d", (result >> length) & 1);
-	printf("\n");
+	return((int)(*length));	
 }
 
-int	main(void)
+int	ft_read_test(char *length)
 {
-	ft_strlen_test();
-	ft_strcpy_test();
-	ft_strcmp_test();
+	return((int)(*length));
+}
+
+int	ft_strdup_test(char *length)
+{
+	return((int)(*length));
 }
