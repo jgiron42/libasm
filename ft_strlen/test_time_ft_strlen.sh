@@ -1,1 +1,0 @@
-nasm -fmacho64 ft_strlen_lmartin.asm && nasm -fmacho64 ft_strlen_cmarin.asm && nasm -fmacho64 ft_strlen.asm && gcc -c test_time_ft_strlen.c && clang -fno-pie ft_strlen_lmartin.o ft_strlen_cmarin.o ft_strlen.o test_time_ft_strlen.o && rm *.o && ./a.out
