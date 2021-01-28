@@ -2,7 +2,6 @@
 section   .text
         global    ft_read
 	extern 	__errno_location
-;	extern	___error
 
 ft_read:
 		mov	rax, 0

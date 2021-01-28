@@ -52,7 +52,7 @@ void	 ft_write_test()
 	ret2 = write(fd2, NULL, 0);
 	errno2 = errno;
 	printf("%s\n", errno1 == errno2 && ret1 == ret2 && !system("cmp libasm_test_tmp1 libasm_test_tmp2") ? "✅" : "❌");
-
+	system("rm -f libasm_test_tmp1 libasm_test_tmp2");
 }
 
 void	ft_read_test()
@@ -90,6 +90,7 @@ void	ft_read_test()
 	ret2 = read(fd2, NULL, 0);
 	errno2 = errno;
 	printf("%s\n", ret1 == ret2 && errno1 == errno2 && !strcmp(buff1, buff2) ? "✅" : "❌");
+	system("rm -f libasm_test_tmp1 libasm_test_tmp2");
 
 }
 
