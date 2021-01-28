@@ -14,10 +14,6 @@ NAME = libasm
 
 NAME_LIB = libasm.a
 
-
-
-CC = gcc
-
 UNAME_S := $(shell uname -s)
 
 ifeq ($(UNAME_S), Linux)
@@ -26,7 +22,7 @@ ifeq ($(UNAME_S), Linux)
 		ft_strcmp.s \
 		ft_strcpy.s \
 		ft_strdup.s \
-		ft_strlen.s 
+		ft_strlen.s     
     NASMFLAGS ?= -f elf64
 endif
 ifeq ($(UNAME_S), Darwin)
@@ -37,21 +33,20 @@ ifeq ($(UNAME_S), Darwin)
 		ft_strdup_macos.s \
 		ft_strlen_macos.s 
     NASMFLAGS ?= -f macho64
-
 endif
 
-OBJ = $(SRCS:.s=.o)
+CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -no-pie
 
 NASM = nasm
+
+OBJ = $(SRCS:.s=.o)
 
 %.o : %.s
 	  $(NASM) $(NASMFLAGS) $< -o $@
 
 all : $(NAME)
-
-
 
 $(NAME) : $(OBJ) 
 	ar rcs $(NAME_LIB) $(OBJ)

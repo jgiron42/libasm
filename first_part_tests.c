@@ -39,14 +39,36 @@ void	ft_strcpy_test()
 
 void	ft_strcmp_test()
 {
+	int ret1;
+	int ret2;
+
 	printf("====== ft_strcmp: ======\n");
-	printf("%s", get_sign(strcmp("", "")) == get_sign(ft_strcmp("", "")) ? "✅" : "❌");
-	printf("%s", get_sign(strcmp("a", "")) == get_sign(ft_strcmp("a", "")) ? "✅" : "❌");
-	printf("%s", get_sign(strcmp("sdfs", "")) == get_sign(ft_strcmp("sdfs", "")) ? "✅" : "❌");
-	printf("%s", get_sign(strcmp("qwerty", "r")) == get_sign(ft_strcmp("qwerty", "r")) ? "✅" : "❌");
-	printf("%s", get_sign(strcmp("fffdf", "ddd")) == get_sign(ft_strcmp("fffdf", "ddd")) ? "✅" : "❌");
-	printf("%s", get_sign(strcmp("f", "qwerty"))== get_sign(ft_strcmp("f", "qwerty")) ? "✅" : "❌");
-	printf("%s", get_sign(strcmp("wer", "qwerty")) == get_sign(ft_strcmp("wer", "qwerty")) ? "✅" : "❌");
-	printf("%s", get_sign(strcmp("", "q")) == get_sign(ft_strcmp("", "q")) ? "✅" : "❌");
-	printf("%s\n", get_sign(strcmp("", "qwerty")) == get_sign(ft_strcmp("", "qwerty")) ? "✅" : "❌");
+	
+	ret1 = get_sign(strcmp("", ""));
+	ret2 = get_sign(ft_strcmp("", ""));
+	printf("%s", ret1 == ret2 ? "✅" : "❌");
+	ret1 = get_sign(strcmp("a", ""));
+	ret2 = get_sign(ft_strcmp("a", ""));
+	printf("%s", ret1 == ret2 ? "✅" : "❌");
+	ret1 = get_sign(strcmp("sdfs", ""));
+	ret2 = get_sign(ft_strcmp("sdfs", ""));
+	printf("%s", ret1 == ret2 ? "✅" : "❌");
+	ret1 = get_sign(strcmp("qwerty", "r"));
+	ret2 = get_sign(ft_strcmp("qwerty", "r"));
+	printf("%s", ret1 == ret2 ? "✅" : "❌");
+	ret1 = get_sign(strcmp("qwerty", "qwe"));
+	ret2 = get_sign(ft_strcmp("qwerty", "qwe"));
+	printf("%s", ret1 == ret2 ? "✅" : "❌");
+	ret1 = get_sign(strcmp("f", "qwerty"));
+	ret2 = get_sign(ft_strcmp("f", "qwerty"));
+	printf("%s", ret1 == ret2 ? "✅" : "❌");
+	ret1 = get_sign(strcmp("wer", "qwerty"));
+	ret2 = get_sign(ft_strcmp("wer", "qwerty"));
+	printf("%s", ret1 == ret2 ? "✅" : "❌");
+	ret1 = get_sign(strcmp("", "q"));
+	ret2 = get_sign(ft_strcmp("", "q"));
+	printf("%s", ret1 == ret2 ? "✅" : "❌");
+	ret1 = get_sign(strcmp("", "qwerty"));
+	ret2 = get_sign(ft_strcmp("", "qwerty"));
+	printf("%s\n", ret1 == ret2 ? "✅" : "❌");
 }

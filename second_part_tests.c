@@ -70,11 +70,6 @@ void	ft_read_test()
 		!(buff2 = malloc(1000)))
 		return;
 	printf("====== ft_read:   ======\n");
-	ret1 = ft_read(fd1, buff1, 1);
-	errno1 = errno;
-	ret2 = read(fd2, buff2, 1 );
-	errno2 = errno;
-	printf("%s", ret1 == ret2 && errno1 == errno2 && !strcmp(buff1, buff2) ? "✅" : "❌");
 	ret1 = ft_read(fd1, buff1, 6);
 	errno1 = errno;
 	ret2 = read(fd2, buff2, 6);
