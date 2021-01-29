@@ -6,7 +6,7 @@
 #    By: jgiron <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/18 12:01:33 by jgiron            #+#    #+#              #
-#    Updated: 2021/01/29 11:42:10 by jgiron           ###   ########.fr        #
+#    Updated: 2021/01/29 12:16:44 by jgiron           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,9 +35,9 @@ ifeq ($(UNAME_S), Darwin)
     NASMFLAGS ?= -f macho64
 endif
 
-CC = gcc
+CC = clang
 
-CFLAGS = -Wall -Wextra -Werror  -no-pie
+CFLAGS = -Wall -Werror -Wextra
 
 NASM = nasm
 

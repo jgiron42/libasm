@@ -16,6 +16,7 @@ section .text
 ft_strcmp:
 		dec		rdi
 		dec		rsi
+		push		rbx
 loop:		
 		inc		rdi
 		inc		rsi			
@@ -29,4 +30,5 @@ loop:
 	    	je		loop
 end:
 	sub		rax, rbx
+	pop		rbx
 	ret
